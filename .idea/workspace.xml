@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10f3899a-9114-4227-9867-f255389bfc56" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -126,6 +126,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1jWBAtGhJ5M1IcCaPPO87goZWry" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -156,7 +159,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603909826341</updated>
       <workItem from="1603909827560" duration="1392000" />
-      <workItem from="1603915111490" duration="1665000" />
+      <workItem from="1603915111490" duration="2120000" />
     </task>
     <servers />
   </component>
