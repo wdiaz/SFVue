@@ -36,8 +36,8 @@
                         <h1>
                             Products
                         </h1>
-                        <p> TODO - load some products!</p>
-                        {{legend}}
+                        <!-- <legend-component v-bind:title="legend" /> -->
+                        <legend-component :title="legend" />
                     </div>
                 </div>
             </div>
@@ -46,13 +46,19 @@
 </template>
 
 <script>
+import LegendComponent from '../components/legend';
+
 export default {
     name: 'Products',
-    data() {
+    components: { LegendComponent },
+    /*data() {
         return {
             legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
         };
-    },
+    }, or*/
+    data: () => ({
+        legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
+    }),
 };
 </script>
 <style lang="scss">
