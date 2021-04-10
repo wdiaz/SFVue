@@ -1,4 +1,4 @@
-var Encore = require('@symfony/webpack-encore');
+const Encore = require('@symfony/webpack-encore');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -64,20 +64,27 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
     .enableVueLoader()
+    .configureCssLoader((config) => {
+        if (!Encore.isProduction() && config.modules) {
+            config.modules.localIdentName = '[name]_[local]_[hash:base64:5]';
+        }
+    })
 
-    // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
+// uncomment if you use TypeScript
+//.enableTypeScriptLoader()
 
-    // uncomment to get integrity="..." attributes on your script & link tags
-    // requires WebpackEncoreBundle 1.4 or higher
-    //.enableIntegrityHashes(Encore.isProduction())
+// uncomment to get integrity="..." attributes on your script & link tags
+// requires WebpackEncoreBundle 1.4 or higher
+//.enableIntegrityHashes(Encore.isProduction())
 
-    // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+// uncomment if you're having problems with a jQuery plugin
+//.autoProvidejQuery()
 
-    // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
-    //.addEntry('admin', './assets/js/admin.js')
+// uncomment if you use API Platform Admin (composer req api-admin)
+//.enableReactPreset()
+//.addEntry('admin', './assets/js/admin.js')
 ;
-
+if(! Encore.isProduction()) {
+    Encore.disableCssExtraction();
+}
 module.exports = Encore.getWebpackConfig();
