@@ -33,13 +33,7 @@
             </aside>
             <div class="col-xs-12 col-9">
                 <div class="row">
-                    <div class="col-12">
-                        <h1>
-                            Products
-                        </h1>
-                        <!-- <legend-component v-bind:title="legend" /> -->
-                        <legend-component :title="legend" />
-                    </div>
+                    <legend-component :title="legend" />
                 </div>
             </div>
         </div>
@@ -58,7 +52,7 @@ export default {
         };
     }, or*/
     data: () => ({
-        legend: 'Shipping takes 10-12 weeks!',
+        legend: 'Shipping takes 10-12 weeks. Order now and receive your products!',
     }),
 };
 </script>
@@ -69,7 +63,6 @@ export default {
   ul {
     li a:hover {
       background: $blue-component-link-hover;
-      background: blue;
     }
   }
 }
