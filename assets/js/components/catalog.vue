@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-xs-12 col-6 mb-2 pb-2">
-                TODO: Load more products
+                <p>TODO: Load more products</p>
             </div>
         </div>
     </div>
@@ -28,12 +28,8 @@ export default {
     },
     data() {
         return {
-            legend: 'tu nana was here',
+            legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
         };
     },
 };
 </script>
-
-<style scoped>
-
-</style>

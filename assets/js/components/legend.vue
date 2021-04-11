@@ -1,9 +1,9 @@
 <template>
-  <div>
-      <span class="p-3">
-          {{ title }}
-      </span>
-  </div>
+    <div>
+        <span class="p-3">
+            {{ title }}
+        </span>
+    </div>
 </template>
 
 <script>
