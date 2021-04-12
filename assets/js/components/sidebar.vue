@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <div :class="[$style.sidebar, 'p-3', 'mb-5']"
-            :style="{ width: collapsed ? '70px' : 'auto'}"
+    <div
+        :class="componentClass"
         >
+        <div v-show="!collapsed">
             <h5 class="text-center">
                 Categories
             </h5>
@@ -25,13 +25,14 @@
                     >{{ category.name }}</a>
                 </li>
             </ul>
-          <hr>
-          <div class="d-flex justify-content-end">
-            <button class="btn btn-secondary btn-sm"
-                    v-on:click="toggleCollapsed"
-                    v-text="collapsed ? '>>' : '<< Collapse'"
+            <hr>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button
+                class="btn btn-secondary btn-sm"
+                @click="toggleCollapsed"
+                v-text="collapsed ? '>>' : '<< Collapse'"
             />
-          </div>
         </div>
     </div>
 </template>
@@ -41,9 +42,15 @@ export default {
     components: {
 
     },
+    props: {
+        testProp: {
+            type: String,
+            default: 'I am a default value',
+        },
+    },
     data() {
         return {
-          collapsed: false,
+            collapsed: false,
             categories: [
                 {
                     name: 'Appliances',
@@ -64,18 +71,39 @@ export default {
             ],
         };
     },
-  methods: {
-    toggleCollapsed() {
-      this.collapsed = ! this.collapsed
-    }
-  },
+    computed: {
+    /**
+     * Compute the component classes depending on collapsed
+     *
+     * @returns {string[]}
+     */
+        componentClass() {
+            const classes = [this.$style.component, 'p-3', 'mb-5'];
+            if (this.collapsed) {
+                classes.push(this.$style.collapsed);
+            }
+            return classes;
+        },
+    },
+    created() {
+
+    },
+    methods: {
+        toggleCollapsed() {
+            this.collapsed = !this.collapsed;
+        },
+    },
 };
 </script>
 
 <style lang="scss" module>
 @import "../../scss/components/light-component";
-.sidebar {
+.component {
   @include light-component;
+
+  &.collapse {
+    width: 70px;
+  }
   ul {
     li a:hover {
       background: $blue-component-link-hover;

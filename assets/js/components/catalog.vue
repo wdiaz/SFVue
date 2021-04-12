@@ -27,7 +27,7 @@ export default {
     },
     data() {
         return {
-            legend: 'Shipping takes 10-12 weeks, and products probably won\'t work',
+            legend: 'Shipping takes 10-12 weeks, and products probably won\'t work!',
         };
     },
 };
