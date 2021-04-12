@@ -9,7 +9,6 @@
                 <legend-component :title="legend" />
             </div>
         </div>
-
         <div class="row">
             <div class="col-xs-12 col-6 mb-2 pb-2">
                 <p>TODO: Load more products</p>

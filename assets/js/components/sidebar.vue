@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div :class="[$style.sidebar, 'p-3', 'mb-5']">
+        <div :class="[$style.sidebar, 'p-3', 'mb-5']"
+            :style="{ width: collapsed ? '70px' : 'auto'}"
+        >
             <h5 class="text-center">
                 Categories
             </h5>
@@ -12,20 +14,24 @@
                     >All Products</a>
                 </li>
 
-                <li class="nav-item">
+                <li
+                    v-for="(category, index) in categories"
+                    :key="index"
+                    class="nav-item"
+                >
                     <a
                         class="nav-link"
-                        href="#"
-                    >Category A</a>
-                </li>
-
-                <li class="nav-item">
-                    <a
-                        class="nav-link"
-                        href="#"
-                    >Category B</a>
+                        :href="category.link"
+                    >{{ category.name }}</a>
                 </li>
             </ul>
+          <hr>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-secondary btn-sm"
+                    v-on:click="toggleCollapsed"
+                    v-text="collapsed ? '>>' : '<< Collapse'"
+            />
+          </div>
         </div>
     </div>
 </template>
@@ -35,6 +41,34 @@ export default {
     components: {
 
     },
+    data() {
+        return {
+          collapsed: false,
+            categories: [
+                {
+                    name: 'Appliances',
+                    link: '#',
+                },
+                {
+                    name: 'Apps & Games',
+                    link: '#',
+                },
+                {
+                    name: 'Arts, Crafts, & Sewing',
+                    link: '#',
+                },
+                {
+                    name: 'Automotive Parts & Accessories',
+                    link: '#',
+                },
+            ],
+        };
+    },
+  methods: {
+    toggleCollapsed() {
+      this.collapsed = ! this.collapsed
+    }
+  },
 };
 </script>
 
